@@ -11,10 +11,11 @@ body{
     margin: 0 auto;
     padding: 0;
     display: flex;
+    overflow: hidden;
 }
 
 .fundoCartao{
-    max-height: 100vh;
+    max-height: 101vh;
     width: 500px;
 }
 
@@ -28,12 +29,12 @@ body{
 }
 
 .lateral img:nth-child(1){
-    top: -700px;
+    top: -650px;
     left: 170px;
 }
 
 .lateral img:nth-child(2){
-    top: -400px;
+    top: -350px;
     left: 250px;
 }
 
@@ -46,13 +47,21 @@ body{
 .formulario form{
     position: absolute;
     bottom: 300px;
-    left: 500px;
+    left: 400px;
 }
 
 .formulario form label{
     display: flex;
     flex-direction: column;
     gap: 10px; /* Adicione um espaçamento entre os elementos */
+}
+
+.form label{
+    color: brown;
+}
+
+form div{
+    margin-top: 20px;
 }
 
 form a{
