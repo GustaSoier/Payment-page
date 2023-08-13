@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Página de Pagamento</title>
+</head>
+<body>
+    <section class="background">
+        <img src="img/bg-desktop.png" alt="" class="fundoCartao">
+
+        <div class="lateral">
+            <img src="img/frente-cartao.png" alt="" class="CartaoFrente">
+            <img src="img/atras-cartao.png" alt="" class="cartaoAtras">
+        </div>
+    </section>
+
+    <section class="formulario">
+    <form action="#" method="post" id="form">
+        <div>
+            <label for="name">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="ex: Gustavo Sampaio Soier">
+            <label for="number">Número do cartão</label>
+            <input type="number" id="numeroCartao" name="numeroCartao" required placeholder="ex: 123456789">
+            <label for="date">Vencimento do cartão</label>
+            <input type="date" id="data" name="data" placeholder="Informe a data de vencimento do cartão:">
+            <label for="number">CVC</label>
+            <input type="number" id="cvc" name="numero" maxlength="3" placeholder="ex: 454">
+
+            <a href="#">Confirmar</a>
+        </div>
+    </form>
+    </section>
+</body>
+</html>
