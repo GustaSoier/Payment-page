@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Página de Pagamento</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Payment</title>
+  <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <section class="background">
-            <img src="img/bg-desktop.png" alt="" class="fundoCartao">
-
-        <div class="lateral">
-            <img src="img/frente-cartao.png" alt="" class="CartaoFrente">
-            <img src="img/atras-cartao.png" alt="" class="cartaoAtras">
+  <div class="container">
+    <div class="left">
+      <div class="containerCard">
+        <div class="cardFront">
+          <img src="img/bg-card-front.png" alt="Cartão parte frontal">
+          <div class="imgCard"></div>
+          <div class="imgCardSmall"></div>
+          <p id="cardNumber">0000 0000 0000 0000</p>
+          <p id="cardName">jane appleseed</p>
+          <p id="cardVal">00/00</p>
         </div>
-    </section>
-
-    <section class="formulario">
-    <form action="#" method="post" id="form">
-            <label for="name">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="ex: Gustavo Sampaio Soier">
-            <label for="number">Número do cartão</label>
-            <input type="number" id="numeroCartao" name="numeroCartao" required placeholder="ex: 123456789">
-            <label for="date">Validade do cartão</label>
-            <input type="date" id="data" name="data" placeholder="Informe a data de vencimento do cartão:">
-            <label for="number">CVC</label>
-            <input type="number" id="cvc" name="numero" maxlength="3" placeholder="ex: 454">
-
-            <div>
-                <a href="#">Confirmar</a>
-            </div>
-    </form>
-    </section>
+        <div class="cardBack">
+          <img src="img/bg-card-back.png" alt="Cartão parte traseira">
+          <p id="numberCvc">000</p>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <form>
+        <fieldset>
+          <label>
+            cardholder name
+            <input type="text" name="nameCard" id="nameCard" placeholder="e.g. Jane Appleseed" required>
+          </label>
+          <label>
+            card number
+            <input type="number" name="numberCard" id="numberCard" required placeholder="e.g. 1234 5678 9123 0000">
+          </label>
+          <div class="containerWrap">
+            <label>
+              exp. data (mm/yy)
+              <div class="valNumbers">
+                <input type="number" name="monthNumber" id="monthNumber" required placeholder="mm" oninput="concatenaValidade()">
+                <input type="number" name="yearNumber" id="yearNumber" required placeholder="yy" oninput="concatenaValidade()">
+              </div>
+            </label>
+            <label>
+              cvc
+              <input type="number" name="cvcNumber" id="cvcNumber" required placeholder="e.g. 123">
+            </label>
+          </div>
+        </fieldset>
+        <button type="submit" id="btnSubmit">Confirm</button>
+      </form>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
 </body>
+
 </html>

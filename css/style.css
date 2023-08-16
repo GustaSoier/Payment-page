@@ -1,73 +1,416 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
-/* font-family: 'Poppins', sans-serif; */
-
-*{
-    font-family: 'Poppins', sans-serif;  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
-    overflow: hidden;
+:root {
+  --font-body: 'poppins', sans-serif;
+  --color-btn: #220930;
 }
 
-.fundoCartao{
-    max-height: 101vh;
+body {
+  font-family: var(--font-body);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(170deg, #310D40, #53233A, #2D2958, #1F082B);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  width: min-content;
+  height: min-content;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60px;
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.142);
+}
+
+.right,
+.left {
+  height: 600px;
+}
+
+.left {
+  background: black url(../img/bg-main-desktop.png) no-repeat center center;
+  background-size: cover;
+  width: 350px;
+  border-radius: 20px 0 0 20px;
+}
+
+.right {
+  background-color: #fff;
+  width: 800px;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerCard {
+  height: 100%;
+  position: relative;
+}
+
+.cardFront img,
+.cardBack img {
+  width: 350px;
+  height: 100%;
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.34);
+  border-radius: 10px;
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+
+.cardFront:hover,
+.cardBack:hover {
+  transform: scale(1.08);
+}
+
+.cardFront {
+  top: 17%;
+  left: 30%;
+}
+
+.cardBack {
+  top: 53%;
+  left: 40%;
+}
+
+.right form fieldset {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border: 0;
+}
+
+.right label {
+  display: inherit;
+  flex-direction: column;
+  font-size: 15px;
+}
+
+.right input {
+  font-size: 15px;
+  outline: 0;
+  padding: 10px 8px;
+  width: 400px;
+  margin: 5px 0 20px 0;
+  border-radius: 8px;
+  border: 1px solid #999;
+  text-transform: uppercase;
+}
+
+.right input::placeholder {
+  color: #999;
+  font-size: 15px;
+  text-transform: lowercase;
+}
+
+.valNumbers {
+  display: inline-block;
+}
+
+#monthNumber,
+#yearNumber {
+  width: 100px;
+}
+
+#monthNumber {
+  margin-right: 5px;
+}
+
+#yearNumber {
+  margin-right: 20px;
+}
+
+.cvcInline {
+  display: inline-block;
+}
+
+#cvcNumber {
+  width: 165px;
+}
+
+#monthNumber::placeholder,
+#yearNumber::placeholder,
+.right label {
+  text-transform: uppercase;
+}
+
+.containerWrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  justify-content: center;
+}
+
+#btnSubmit {
+  width: 100%;
+  padding: 13px;
+  border: 0;
+  background-color: var(--color-btn);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#btnSubmit:hover {
+  background-color: #35104a;
+}
+
+.imgCard {
+  width: 35px;
+  height: 35px;
+  background-color: #fff;
+  position: absolute;
+  top: 10%;
+  left: 6%;
+  border-radius: 50%;
+}
+
+.imgCardSmall {
+  width: 25px;
+  height: 25px;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: 13.5%;
+  left: 18%;
+}
+
+#cardNumber {
+  color: white;
+  font-size: 27px;
+  position: absolute;
+  top: 54%;
+  left: 6%;
+}
+
+#cardName {
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 77%;
+  left: 6%;
+}
+
+#cardVal {
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 77%;
+  left: 76%;
+}
+
+#numberCvc {
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 41%;
+  left: 78%;
+}
+
+.right form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1240px) {
+.right {
+    width: 600px;
+}
+
+.right input {
+    width: 250px;
+}
+
+#monthNumber,
+#yearNumber {
+    width: 60px;
+}
+
+#cvcNumber {
+    width: 100px;
+}
+
+#btnSubmit {
+    width: 250px;
+}
+
+.cardFront img,
+.cardBack img {
+    width: 320px;
+}
+
+.cardFront {
+    top: 20%;
+}
+
+#cardNumber {
+    font-size: 24px;
+}
+}
+
+@media (max-width: 1000px) {
+.left {
+    width: 300px;
+}
+
+.right {
     width: 500px;
 }
 
-.lateral{
-    position: relative;
+.cardFront {
+    left: 10%;
 }
 
-.lateral img{
-    z-index: 10;
-    position: absolute;
+.cardBack {
+    left: 20%;
+}
 }
 
-.lateral img:nth-child(1){
-    top: -650px;
-    left: 170px;
+@media (max-width: 840px) {
+body {
+    background-image: linear-gradient(170deg, #ffffff, #ffffff, #ffffff, #ffffff);
+    height: 100vh;
 }
 
-.lateral img:nth-child(2){
-    top: -350px;
-    left: 250px;
-}
-
-.formulario{
-    display: flex;
+.container {
     flex-direction: column;
-    position: relative;
+    box-shadow: none;
 }
 
-.formulario form{
-    position: absolute;
-    bottom: 300px;
-    left: 400px;
+.right {
+    height: 450px;
+    border-radius: 0;
+    width: 100vw;
 }
 
-.formulario form label{
+.left {
+    height: 400px;
+    width: 100vw;
     display: flex;
-    flex-direction: column;
-    gap: 10px; /* Adicione um espaçamento entre os elementos */
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
 }
 
-.form label{
-    color: brown;
+.containerCard {
+    justify-content: center;
+    align-items: center;
 }
 
-form div{
-    margin-top: 20px;
+.cardFront,
+.cardBack {
+    position: relative;
+    left: 0;
+    top: 0;
 }
 
-form a{
-    background-color: rgb(14, 0, 31);
-    padding: 10px 40px;
-    text-decoration: none;
-    color: white;
-    border-radius: 5px;
+.cardFront {
+    top: 63%;
+    left: -5%;
+    z-index: 99;
+}
+
+.cardBack {
+    top: -8%;
+    left: 5%;
+}
+}
+
+@media (max-width: 440px) {
+
+.cardFront img,
+.cardBack img {
+    width: 290px;
+}
+
+.cardFront {
+    top: 69%;
+    left: -2%;
+    z-index: 99;
+}
+
+.cardBack {
+    top: 4%;
+    left: 2%;
+}
+
+.containerWrap {
+    width: 250px;
+}
+}
+
+@media (max-width: 335px) {
+.cardFront img,
+.cardBack img {
+    width: 250px;
+}
+.cardFront {
+    top: 73%;
+    left: -2%;
+    z-index: 99;
+}
+
+.cardBack {
+    top: 16%;
+    left: 2%;
+}
+
+  .containerWrap {
+    width: 250px;
+}  
+
+#cardNumber {
+    font-size: 20px;
+    top: 52%;
+    left: 6%;
+}
+
+#cardName {
+    font-size: 13px;
+    top: 75%;
+    left: 6%;
+}
+
+#cardVal {
+    font-size: 13px;
+    top: 75%;
+    left: 76%;
+}
+
+#numberCvc {
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 40%;
+  left: 76%;
+}
+
+.imgCardSmall {
+  top: 13.5%;
+  left: 23%;
+}
 }
